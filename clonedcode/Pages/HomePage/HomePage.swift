@@ -13,7 +13,8 @@ struct HomePage: View {
 
     var body: some View {
         VStack {
-            topBanner
+            TopBannerView()
+            
             header
             mainMenu
             
@@ -77,35 +78,6 @@ struct HomePage: View {
         }
     }
 
-    var topBanner: some View {
-        ZStack {
-            HStack {
-                Spacer()
-
-                Text("~11/30")
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 3)
-                    .foregroundColor(Color.white)
-                    .background(Color.purple)
-                    .cornerRadius(16)
-
-                Text("하얏트 호텔 50만원 상품권 모음")
-                    .foregroundColor(Color.white)
-
-                Spacer()
-            }.frame(height: 50)
-                .padding(.trailing)
-                .background(Color.black)
-
-            HStack {
-                Spacer()
-                Image(systemName: "xmark.circle")
-                    .font(.system(size: 24))
-                    .foregroundColor(Color.white)
-            }.padding(.trailing)
-        }
-    }
-
     var header: some View {
         HStack {
             Text("d.code")
@@ -131,7 +103,7 @@ struct HomePage: View {
                             .padding(.bottom, -4)
                         Spacer()
                         if title == selectedMenu {
-                            Rectangle().fill(.black).frame(height: 3)
+                            Rectangle().fill(Color(UIColor.label)).frame(height: 3)
                         }
                     }.frame(height: 30)
                         .onTapGesture {
