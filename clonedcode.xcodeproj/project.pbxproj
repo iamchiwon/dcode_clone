@@ -39,8 +39,6 @@
 		A19149F7291CF3CE000788E2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A19149FD291CF3CE000788E2 /* clonedcodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = clonedcodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1914A01291CF3CE000788E2 /* clonedcodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clonedcodeTests.swift; sourceTree = "<group>"; };
-		A1914A0B291CF3CE000788E2 /* clonedcodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clonedcodeUITests.swift; sourceTree = "<group>"; };
-		A1914A0D291CF3CE000788E2 /* clonedcodeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clonedcodeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A1914A1D291D0531000788E2 /* LayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutView.swift; sourceTree = "<group>"; };
 		A1914A20291E156F000788E2 /* BottomTabMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabMenu.swift; sourceTree = "<group>"; };
 		A1914A22291E1678000788E2 /* BottomTabMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabMenuViewModel.swift; sourceTree = "<group>"; };
@@ -73,7 +71,6 @@
 			children = (
 				A19149EF291CF3CC000788E2 /* clonedcode */,
 				A1914A00291CF3CE000788E2 /* clonedcodeTests */,
-				A1914A0A291CF3CE000788E2 /* clonedcodeUITests */,
 				A19149EE291CF3CC000788E2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -115,15 +112,6 @@
 				A1914A32291E2BF6000788E2 /* Color+Hex_Tests.swift */,
 			);
 			path = clonedcodeTests;
-			sourceTree = "<group>";
-		};
-		A1914A0A291CF3CE000788E2 /* clonedcodeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A1914A0B291CF3CE000788E2 /* clonedcodeUITests.swift */,
-				A1914A0D291CF3CE000788E2 /* clonedcodeUITestsLaunchTests.swift */,
-			);
-			path = clonedcodeUITests;
 			sourceTree = "<group>";
 		};
 		A1914A1A291D04FA000788E2 /* Pages */ = {
