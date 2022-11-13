@@ -66,6 +66,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A1016F9F2920EA0800A846AB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A1914A26291E2685000788E2 /* TopBannerView.swift */,
+				A1914A28291E26B3000788E2 /* TopBannerViewModel.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A1016FA02920EA2800A846AB /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				A1016FA12920EA3A00A846AB /* Components */,
+				A1914A1D291D0531000788E2 /* LayoutView.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		A1016FA12920EA3A00A846AB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A1914A20291E156F000788E2 /* BottomTabMenu.swift */,
+				A1914A22291E1678000788E2 /* BottomTabMenuViewModel.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		A19149E4291CF3CC000788E2 = {
 			isa = PBXGroup;
 			children = (
@@ -117,8 +144,8 @@
 		A1914A1A291D04FA000788E2 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				A1016FA02920EA2800A846AB /* Layout */,
 				A1914A1B291D0503000788E2 /* HomePage */,
-				A1914A1D291D0531000788E2 /* LayoutView.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -126,6 +153,7 @@
 		A1914A1B291D0503000788E2 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				A1016F9F2920EA0800A846AB /* Components */,
 				A19149F2291CF3CC000788E2 /* HomePage.swift */,
 			);
 			path = HomePage;
@@ -134,20 +162,8 @@
 		A1914A1C291D0511000788E2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				A1914A1F291E1370000788E2 /* Home */,
-				A1914A20291E156F000788E2 /* BottomTabMenu.swift */,
-				A1914A22291E1678000788E2 /* BottomTabMenuViewModel.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		A1914A1F291E1370000788E2 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				A1914A26291E2685000788E2 /* TopBannerView.swift */,
-				A1914A28291E26B3000788E2 /* TopBannerViewModel.swift */,
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		A1914A2A291E29D2000788E2 /* Utils */ = {

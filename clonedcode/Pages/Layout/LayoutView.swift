@@ -7,13 +7,7 @@
 
 import SwiftUI
 
-
-
 struct LayoutView: View {
-    
-
-    @State var selectedTab = "홈"
-
     var body: some View {
         NavigationView {
             GeometryReader { g in
