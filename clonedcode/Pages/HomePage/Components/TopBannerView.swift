@@ -22,7 +22,7 @@ struct TopBannerView: View {
                         .foregroundColor(Color(hex: banner.highlight.foregroundColor))
                         .background(Color(hex: banner.highlight.backgroundColor))
                         .cornerRadius(16)
-                    
+
                     Text(banner.banner.text)
                         .foregroundColor(Color(hex: banner.banner.foregroundColor))
 
@@ -36,11 +36,7 @@ struct TopBannerView: View {
                     Image(systemName: "xmark.circle")
                         .font(.system(size: 24))
                         .foregroundColor(Color.white)
-                        .onTapGesture {
-                            withAnimation {
-                                viewModel.onClose()
-                            }
-                        }
+                        .onTapGesture { viewModel.onClose() }
                 }.padding(.trailing)
             }
         }
