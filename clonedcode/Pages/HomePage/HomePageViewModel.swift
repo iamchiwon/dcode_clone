@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-enum HomeTabs: String, CaseIterable {
+enum HomeMenu: String, CaseIterable {
     case HOME, SELECT, PREORDER = "PRE-ORDER", DIRECT, WOMEN, MEN
 }
 
@@ -17,7 +17,7 @@ class HomePageViewModel: ObservableObject {
     private let bannerService: BannerServiceProtocol
 
     @Published var topBanner: TextBanner? = nil
-    @Published var selectedHomeTab = HomeTabs.HOME
+    @Published var selectedHomeTab = HomeMenu.HOME
 
     init(bannerService: BannerServiceProtocol) {
         self.bannerService = bannerService

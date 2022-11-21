@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct LayoutView: View {
-    
-    @EnvironmentObject var viewModel: LayoutViewModel 
-    
+    @EnvironmentObject var viewModel: LayoutViewModel
+
     var body: some View {
         NavigationView {
             GeometryReader { g in
                 ZStack {
-                    HomePage()
+                    switch viewModel.selectedTab.id {
+                    case 0: HomePage()
+                    case 1: BrandPage()
+                    case 2: NewsPage()
+                    case 3: WishPage()
+                    case 4: MyPage()
+                    default: EmptyView()
+                    }
 
                     VStack {
                         Spacer()

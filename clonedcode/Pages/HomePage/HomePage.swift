@@ -16,7 +16,7 @@ struct HomePage: View {
                 viewModel.closeTopBanner()
             }
             HomeLogoHeaderView()
-            HomeTabView(tabs: HomeTabs.allCases, selectedTab: viewModel.selectedHomeTab) {
+            HomeTabView(tabs: HomeMenu.allCases, selectedTab: viewModel.selectedHomeTab) {
                 viewModel.selectedHomeTab = $0
             }
 

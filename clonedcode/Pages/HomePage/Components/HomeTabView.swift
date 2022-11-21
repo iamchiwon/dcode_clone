@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct HomeTabView: View {
-    let tabs: [HomeTabs]
-    let selectedTab: HomeTabs
-    let onChangeTab: (HomeTabs) -> Void
+    let tabs: [HomeMenu]
+    let selectedTab: HomeMenu
+    let onChangeTab: (HomeMenu) -> Void
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -34,12 +34,11 @@ struct HomeTabView: View {
 }
 
 struct HomeMainMenuView_Previews: PreviewProvider {
-    @State static var selected = HomeTabs.HOME
+    @State static var selected = HomeMenu.HOME
 
     static var previews: some View {
-        HomeTabView(tabs: HomeTabs.allCases,
+        HomeTabView(tabs: HomeMenu.allCases,
                     selectedTab: selected) {
-            print($0)
             selected = $0
         }
     }
