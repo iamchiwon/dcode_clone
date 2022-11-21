@@ -8,18 +8,20 @@
 import SwiftUI
 
 struct HomePage: View {
-    @StateObject var viewModel = HomePageViewModel()
+    @EnvironmentObject var viewModel: HomePageViewModel
 
     var body: some View {
-        VStack {
-            TopBannerView()
+        VStack(spacing: 0) {
+            TopBannerView(banner: viewModel.topBanner) {
+                viewModel.closeTopBanner()
+            }
             HomeLogoHeaderView()
-            HomeMainMenuView()
+            HomeTabView(tabs: HomeTabs.allCases, selectedTab: viewModel.selectedHomeTab) {
+                viewModel.selectedHomeTab = $0
+            }
 
             ScrollView {
                 VStack(alignment: .leading, spacing: 30) {
-                    
-                    
                     Rectangle()
                         .fill(Color.red)
                         .frame(height: 500)
@@ -81,7 +83,14 @@ struct HomePage: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    init() {
+        Container.setup()
+    }
+
     static var previews: some View {
+        let homePageViewModel = Container.shared.resolve(HomePageViewModel.self)!
+
         HomePage()
+            .environmentObject(homePageViewModel)
     }
 }

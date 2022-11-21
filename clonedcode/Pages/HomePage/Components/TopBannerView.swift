@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct TopBannerView: View {
-    @StateObject var viewModel = TopBannerViewModel()
+    var banner: TextBanner? = nil
+    var onClose: (() -> Void)? = nil
 
     var body: some View {
-        if let banner = viewModel.banner {
+        if let banner = banner {
             ZStack {
                 HStack {
                     Spacer()
@@ -36,7 +37,7 @@ struct TopBannerView: View {
                     Image(systemName: "xmark.circle")
                         .font(.system(size: 24))
                         .foregroundColor(Color.white)
-                        .onTapGesture { viewModel.onClose() }
+                        .onTapGesture { onClose?() }
                 }.padding(.trailing)
             }
         }
@@ -45,6 +46,12 @@ struct TopBannerView: View {
 
 struct TopBannerView_Previews: PreviewProvider {
     static var previews: some View {
-        TopBannerView()
+        TopBannerView(
+            banner: TextBanner(
+                banner: TextBanner.ColoredText(text: "[룰렛 쿠폰] 90% 할인 쿠폰 당첨자는?", foregroundColor: 0xFFFFFF, backgroundColor: 0x434979),
+                highlight: TextBanner.ColoredText(text: "-9/13", foregroundColor: 0x000000, backgroundColor: 0xE4E440),
+                link: "/select/detail/2498"
+            )
+        )
     }
 }

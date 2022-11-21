@@ -7,25 +7,25 @@
 
 import SwiftUI
 
-struct HomeMainMenuView: View {
-    @EnvironmentObject var viewModel: HomePageViewModel
-    
+struct HomeTabView: View {
+    let tabs: [HomeTabs]
+    let selectedTab: HomeTabs
+    let onChangeTab: (HomeTabs) -> Void
+
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 16) {
-                ForEach(HomeMenus.allCases, id: \.self) { menu in
+                ForEach(tabs, id: \.self) { tab in
                     VStack {
-                        Text(menu.rawValue)
+                        Text(tab.rawValue)
                             .font(Font.system(size: 20, weight: .regular))
                             .padding(.bottom, -4)
                         Spacer()
-                        if menu == viewModel.selectedMenu {
+                        if tab == selectedTab {
                             Rectangle().fill(Color(UIColor.label)).frame(height: 3)
                         }
                     }.frame(height: 30)
-                        .onTapGesture {
-                            viewModel.selectedMenu = menu
-                        }
+                        .onTapGesture { onChangeTab(tab) }
                 }
             }
             .padding(.horizontal)
@@ -34,7 +34,13 @@ struct HomeMainMenuView: View {
 }
 
 struct HomeMainMenuView_Previews: PreviewProvider {
+    @State static var selected = HomeTabs.HOME
+
     static var previews: some View {
-        HomeMainMenuView()
+        HomeTabView(tabs: HomeTabs.allCases,
+                    selectedTab: selected) {
+            print($0)
+            selected = $0
+        }
     }
 }

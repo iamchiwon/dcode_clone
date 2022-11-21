@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct LayoutView: View {
+    
+    @EnvironmentObject var viewModel: LayoutViewModel 
+    
     var body: some View {
         NavigationView {
             GeometryReader { g in
@@ -19,6 +22,7 @@ struct LayoutView: View {
                         BottomTabMenu()
                             .padding(.bottom, g.safeAreaInsets.bottom)
                             .background(Color(UIColor.systemBackground))
+                            .environmentObject(viewModel)
                     }
                     .edgesIgnoringSafeArea(.bottom)
                 }
@@ -31,5 +35,6 @@ struct LayoutView: View {
 struct LayoutView_Previews: PreviewProvider {
     static var previews: some View {
         LayoutView()
+            .environmentObject(LayoutViewModel())
     }
 }

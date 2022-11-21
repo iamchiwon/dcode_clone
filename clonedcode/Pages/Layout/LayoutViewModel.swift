@@ -1,8 +1,8 @@
 //
-//  BottomTabMenuViewModel.swift
+//  LayoutViewModel.swift
 //  clonedcode
 //
-//  Created by iamchiwon on 2022/11/11.
+//  Created by iamchiwon on 2022/11/21.
 //
 
 import Foundation
@@ -14,8 +14,8 @@ struct TabMenu {
     let title: String
 }
 
-class BottomTabMenuViewModel: ObservableObject {
-    let tabs = [
+class LayoutViewModel : ObservableObject {
+    static let tabs = [
         TabMenu(id: 0, icon: "house", selectedIcon: "house.fill", title: "홈"),
         TabMenu(id: 1, icon: "tag", selectedIcon: "tag.fill", title: "브랜드"),
         TabMenu(id: 2, icon: "newspaper", selectedIcon: "newspaper.fill", title: "뉴스"),
@@ -23,9 +23,5 @@ class BottomTabMenuViewModel: ObservableObject {
         TabMenu(id: 4, icon: "person.circle", selectedIcon: "person.circle.fill", title: "나의 메뉴"),
     ]
 
-    @Published var currentTabId = 0
-
-    func onChange(tab: TabMenu) {
-        currentTabId = tab.id
-    }
+    @Published var selectedTab = tabs[0]
 }

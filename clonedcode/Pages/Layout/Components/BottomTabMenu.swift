@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct BottomTabMenu: View {
-    @StateObject var viewModel = BottomTabMenuViewModel()
+    @EnvironmentObject var viewModel: LayoutViewModel
 
     var body: some View {
         HStack {
-            ForEach(viewModel.tabs, id: \.id) { t in
+            ForEach(LayoutViewModel.tabs, id: \.id) { t in
                 HStack {
                     Spacer()
                     TabItemView(
                         item: t,
-                        selected: viewModel.currentTabId == t.id
+                        selected: viewModel.selectedTab.id == t.id
                     )
                     Spacer()
                 }.onTapGesture {
-                    viewModel.onChange(tab: t)
+                    viewModel.selectedTab = t
                 }
             }
         }
